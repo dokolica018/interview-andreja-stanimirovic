@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-    const connection = await mongoose.connect(process.env.MONGO_URL, {
+    const connection = await mongoose.connect("mongodb://mongo:27017/todos" , {
         useNewUrlParser: true,
         // useCreateIndex: true,
         // useFindAndModify: false,
