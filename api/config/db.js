@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-    const connection = await mongoose.connect("mongodb://mongo:27017/todos" , {
+    // mongodb://mongo:27017/todos
+    const connection = await mongoose.connect("mongodb+srv://todo:todo@todoscluster.fuvhq.mongodb.net/todosdb?retryWrites=true&w=majority" , {
         useNewUrlParser: true,
         // useCreateIndex: true,
         // useFindAndModify: false,
