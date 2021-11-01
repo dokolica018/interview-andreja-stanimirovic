@@ -1,0 +1,12 @@
+caddy.snipd.io {
+    reverse_proxy node-app:5000 {
+        header_down Strict-Transport-Security max-age=31536000;
+    }
+}
+
+cors / {
+  origin            http://0.0.0.0:8080/
+  methods           POST,PUT
+  allow_credentials false
+  max_age           3600
+}

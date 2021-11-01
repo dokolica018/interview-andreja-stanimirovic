@@ -5,22 +5,22 @@ import morgan from 'morgan';
 import connectDB from './config/db.js';
 import todosRoutes from './routes/todos.js';
 
-const app = express()
-app.use(express.json({ extended: true }))
+const app = express();
+app.use(express.json({ extended: true }));
 dotenv.config({
-    path: './config/index.env',
+	path: './config/index.env',
 });
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 connectDB();
 app.use(morgan('dev'));
-app.use(cors())
+app.use(cors());
 
-app.use('/todos',todosRoutes)
+app.use('/todos', todosRoutes);
 app.get('/', (req, res) => {
-    res.send('Welcome to server')
-})
+	res.send('Welcome to server');
+});
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}!`);
+	console.log(`App listening on port ${PORT}!`);
 });

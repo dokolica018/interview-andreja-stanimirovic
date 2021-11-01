@@ -1,0 +1,25 @@
+{
+	"name": "interview-andreja-stanimirovic",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dokolica018/interview-andreja-stanimirovic.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/dokolica018/interview-andreja-stanimirovic/issues"
+	},
+	"homepage": "https://github.com/dokolica018/interview-andreja-stanimirovic#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"prettier": "^2.4.1"
+	}
+}

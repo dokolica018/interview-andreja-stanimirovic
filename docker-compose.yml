@@ -5,7 +5,7 @@ services:
     build: ./www/
     stdin_open: true
     ports:
-      - "3000:3000"
+      - "8080:8080"
     networks: 
       - mern-app
     volumes:
@@ -31,9 +31,23 @@ services:
       - mern-app
     volumes:
       - mongo-data:/data/db
+  caddy:
+    image: caddy/caddy:2.2.1-alpine
+    container_name: caddy-service
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+    - $PWD/Caddyfile:/etc/caddy/Caddyfile
+    - $PWD/site:/srv
+    - caddy_data:/data
+    - caddy_config:/config
 networks:
   mern-app:
     driver: bridge
 volumes:
   mongo-data:
     driver: local
+  caddy_data:
+  caddy_config:
